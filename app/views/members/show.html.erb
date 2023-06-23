@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @member %>
+
+<div>
+  <%= link_to "Edit this member", edit_member_path(@member), class:"btn btn-success" %>
+  <%= link_to "Back to members", members_path, class:"btn btn-secondary"%>
+  <br/><br/>
+  <%= button_to "Delete member", @member, method: :delete, class:"btn btn-warning"%>
+</div>

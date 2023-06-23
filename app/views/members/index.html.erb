@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Members</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Twitter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member|%>
+      <tr>
+        <td><%= member.first_name%></td>
+        <td><%= member.last_name%></td>
+        <td><%= member.email%></td>
+        <td><%= member.phone%></td>
+        <td><%= member.twitter%></td>
+        <td><%= link_to "Show", member, class:"btn btn-primary" %></td>
+        <td><%= link_to "Edit", edit_member_path(member), class:"btn btn-warning" %></td>
+        <td><%= button_to "Delete", member, method: :delete, data: { confirm: "Are you sure ?" }, class:"btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to "Add a member", new_member_path, class:"btn btn-primary" %>
